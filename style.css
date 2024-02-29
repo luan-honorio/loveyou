@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    background-image: url(./acets/fundoo.jpg);
+    background-size: cover;
+    height: 100vh;
+    
+    display: grid;
+    place-items: center;
+    
+    overflow: hidden;
+  }
+  
+  .slider{
+    width: 200px;
+    height: 300px;
+    
+    position: relative;
+    
+     transform-style: preserve-3d;
+    
+    animation: rotate 30s linear infinite;
+  }
+  
+  @keyframes rotate{
+    0%{
+      transform: perspective(1000px) rotateY(0deg)
+    }
+    100%{
+      transform: perspective(1000px) rotateY(360deg)
+    }
+  }
+  
+  
+  .slider span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+    
+    transform-origin: center;
+    transform-style: preserve-3d;
+    
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px);
+  }
+  
+  .slider span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 10px;
+    
+    object-fit: cover;
+    
+    transition: 2s;
+  }
+  .slider span video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 10px;
+    
+    object-fit: cover;
+    
+    transition: 2s;
+  }
+  
+  .slider span:hover img{
+    transform: translateY(-50px) scale(1.2);
+  } 
+  .slider span:hover video{
+    transform: translateY(-50px) scale(1.2);
+  } 
+
+  #overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+   
+    color: #fff;
+  }
+
+  #quote {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 0px;
+    cursor: pointer;
+  }
+    #play-button {
+      font-size: 2em; /* Tamanho do símbolo de play */
+      cursor: pointer;
+  }
+.audio :hover{
+  cursor: pointer;
+}
